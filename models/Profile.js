@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const ProfileSchema = new mongoose.Schema({
+const ProfileSchema = new Schema({
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'user'
   },
   employement: {
@@ -24,11 +25,11 @@ const ProfileSchema = new mongoose.Schema({
     type: String
   },
   followers: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [Schema.Types.ObjectId],
     ref: 'user'
   },
   following: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [Schema.Types.ObjectId],
     ref: 'user'
   },
   seeProfile: {
@@ -40,14 +41,14 @@ const ProfileSchema = new mongoose.Schema({
     default: 'anyone'
   },
   blocked: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [Schema.Types.ObjectId],
     ref: 'user'
   },
   notes: {
     type: [
       {
         user: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: Schema.Types.ObjectId,
           ref: 'user'
         },
         note: {
