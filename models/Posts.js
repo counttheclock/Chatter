@@ -10,18 +10,13 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
+  name: {
+    type: String
+  },
   avatar: {
     type: String
   },
   likes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
-      }
-    }
-  ],
-  dislikes: [
     {
       user: {
         type: Schema.Types.ObjectId,
@@ -42,6 +37,22 @@ const PostSchema = new Schema({
       avatar: {
         type: String
       },
+      likes: [
+        {
+          user: {
+            type: Schema.Types.ObjectId,
+            ref: 'users'
+          }
+        }
+      ],
+      dislikes: [
+        {
+          user: {
+            type: Schema.Types.ObjectId,
+            ref: 'users'
+          }
+        }
+      ],
       date: {
         type: Date,
         default: Date.now
