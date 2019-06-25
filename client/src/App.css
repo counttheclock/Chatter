@@ -1,0 +1,321 @@
+:root {
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.landing {
+  position: relative;
+  background: rgb(103,215,249);
+  background: linear-gradient(129deg, rgba(103,215,249,1) 0%, rgba(35,84,99,.75) 100%);
+  height: 100vh;
+}
+
+.landing-brand{
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.btn-landing {
+  background: white;
+  color: var(--primary-color);
+}
+
+.auth {
+  height: 100vh;
+}
+
+.auth-card {
+  background: white;
+  width: 60%;
+  height: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  -moz-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+}
+
+.auth-header{
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #707070;
+  text-align: center;
+  width: 100%
+}
+
+.auth-secondary{
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #707070;
+  text-align: center;
+  width: 100%
+}
+
+.form-group{
+  text-align: center;
+}
+
+.form-group > input {
+  border: none;
+  border-bottom: .6px solid #707070b4;
+  font-family: 'Open Sans', sans-serif;
+  width: 50%;
+  height: 2rem;
+  padding-left: .3rem;
+  color: #000000d0;
+}
+
+.form-group > input:focus {
+  outline: none;
+  border-bottom: .6px solid #258ce0;
+}
+
+input[name="firstName"] {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="lastName"] {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="email"] {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="password"] {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="password2"] {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="submit"] {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="login-email"] {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="login-password"] {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[name="login-submit"] {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.auth-form-submit {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.auth-form-submit > input {
+  width: 50%;
+  height: 3rem;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  color: #707070b4;
+  background-color: #DBDBDB;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-form-submit > input:hover {
+  background-color: rgb(189, 189, 189);
+}
+
+.auth-close{
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 3rem;
+}
+
+i {
+  color: black;
+}
+
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  justify-content: center;
+  width: 80%;
+  margin-left: 10%;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 1000;
+}
+
+.alert-danger {
+  background: #e7273a;;
+  color: #fff;
+}
+
+.alert-success {
+  background:  #28a745;
+  color: #fff;
+}
+
+
+@media only screen and (max-height: 1000px) {
+  .auth-secondary{
+    top: 16%;
+    font-size: .8rem;
+  }
+
+  input[name="firstName"] {
+    top: 28%;
+  }
+
+  input[name="lastName"] {
+    top: 38%;
+  }
+
+  input[name="email"] {
+    top: 48%;
+  }
+
+  input[name="password"] {
+    top: 58%;
+  }
+
+  input[name="password2"] {
+    top: 68%;
+  }
+
+  input[name="submit"] {
+    top: 85%;
+  }
+} 
+
+@media only screen and (max-width: 1100px) {
+  .form-group > input {
+    width: 75%;
+  }
+
+  .auth-form-submit > input {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .auth-card {
+    width: 85%;
+  }
+
+  .auth-secondary{
+    top: 16%;
+    font-size: .8rem;
+  }
+
+  input[name="firstName"] {
+    top: 28%;
+  }
+
+  input[name="lastName"] {
+    top: 38%;
+  }
+
+  input[name="email"] {
+    top: 48%;
+  }
+
+  input[name="password"] {
+    top: 58%;
+  }
+
+  input[name="password2"] {
+    top: 68%;
+  }
+
+  input[name="submit"] {
+    top: 85%;
+  }
+} 
