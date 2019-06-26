@@ -16,6 +16,16 @@ body {
   background-color: #F5F5F5;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
@@ -190,7 +200,6 @@ input[name="login-submit"] {
   transform: translate(-50%, -50%);
 }
 
-
 .auth-form-submit {
   text-align: center;
   margin-top: 10%;
@@ -211,15 +220,30 @@ input[name="login-submit"] {
   background-color: rgb(189, 189, 189);
 }
 
-.auth-close{
+.close {
   position: absolute;
-  top: 1rem;
-  right: 2rem;
-  font-size: 3rem;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
 }
-
-i {
-  color: black;
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: rgb(22, 22, 22);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
 
 .alert {
@@ -243,6 +267,87 @@ i {
   color: #fff;
 }
 
+nav > div {
+  font-size: 1.6em;
+  min-height: 50px;
+  padding: .7rem 4rem;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  text-align: center;
+  background-color: #46A7C5;
+}
+
+.logo {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+}
+
+.logo-img {
+  width: 10rem;
+  padding: none;
+  display: grid;
+  align-items: center;
+}
+
+.search{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.search-form{
+  width: 100%;
+}
+
+.seach-input{
+  width: 100%;
+  height: 2.3rem;
+  padding-left: 15px;
+  max-width: 50rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.account-btn-wrapper{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 7rem;
+  justify-items: end;
+}
+
+.settings-btn{
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  padding: .5rem 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;;
+}
+
+.settings-btn > i {
+  color: white;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.logout-btn{
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  padding: .5rem 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.logout-btn:hover{
+  cursor: pointer;
+}
 
 @media only screen and (max-height: 1000px) {
   .auth-secondary{
@@ -275,6 +380,30 @@ i {
   }
 } 
 
+@media only screen and (max-width: 1200px) {
+  nav {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .logo-img {
+    width: 9rem;
+    padding: none;
+  }
+
+  .account-btn-wrapper{
+    grid-template-columns: 1fr 0;
+    justify-items: end;
+  }
+
+  .logout-btn{
+    width: 0;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    border: none;
+  }
+}
+
+
 @media only screen and (max-width: 1100px) {
   .form-group > input {
     width: 75%;
@@ -282,6 +411,48 @@ i {
 
   .auth-form-submit > input {
     width: 75%;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  nav {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  nav > div {
+    min-height: 75px;
+    padding: .7rem 3rem;
+  }
+
+  .logo-img {
+    width: 7rem;
+    padding: none;
+  }
+
+  .settings-btn{
+    padding: .5rem 1rem;
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  nav {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+
+  nav > div {
+    min-height: 75px;
+    padding: .7rem 1.5rem;
+  }
+
+  .logo-img {
+    width: 7rem;
+    padding: none;
+  }
+
+  .settings-btn{
+    padding: .5rem 1rem;
+    font-size: .8rem;
   }
 }
 
@@ -318,4 +489,19 @@ i {
   input[name="submit"] {
     top: 85%;
   }
+
+  nav {
+    grid-template-columns: 0 3fr .5fr;
+  }
+
+  .logo-img {
+    width: 0;
+    padding: none;
+  }
+
+  nav > div {
+    min-height: 75px;
+    padding: .7rem 1rem;
+  }
 } 
+
