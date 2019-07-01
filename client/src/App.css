@@ -349,6 +349,341 @@ nav {
   cursor: pointer;
 }
 
+.dashboard-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-gap: 3rem;
+}
+
+.banner-wrapper{
+  display: grid;
+}
+
+.banner-card{
+  background: white;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  min-height: 20rem;
+  max-height: 25rem;
+  align-content: center;
+  -webkit-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  -moz-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+}
+
+.banner-profile-info{
+  margin-left: 20%;
+}
+
+.profile-info-banner > i{
+  color: #2EC9B8;
+  padding-right: 1rem;
+}
+
+.profile-info-banner{
+  font-family: 'Open Sans', sans-serif;
+  color: #808080;
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.profile-description-banner{
+  font-family: 'Open Sans', sans-serif;
+  color: #808080;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.create-profile-wrapper{
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.create-profile-btn{
+  border-radius: 5px;
+  border: none;
+  height: 2.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #2EC9B8;
+  -webkit-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+}
+
+.profile-pic {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-pic > img {
+  border-radius: 50%;
+  width: 6rem;
+  border: 5px solid #46A7C5;
+  display: block;
+  margin: auto;
+}
+
+.user-name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.postform-card{
+  background-color: white;
+  margin-top: 2rem;
+  padding: .7rem;
+  -webkit-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  -moz-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+}
+
+.post-input{
+  width: 100%;
+  height: 6rem;
+  resize: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-left: 10px;
+  padding-top: 5px;
+  margin-bottom: .7rem;
+}
+
+.post-submit{
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  height: 2.5rem;
+  color: white;
+  background-color: #2EC9B8;
+}
+
+.post-submit:hover{
+  cursor: pointer;
+}
+
+.note-card{
+  background-color: white;
+  margin-right: 3rem;
+  margin-top: 2rem;
+  height: 40rem;
+  -webkit-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  -moz-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+}
+
+.note-header{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.8rem;
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+hr {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.settings-header{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3rem;
+  color: #707070;
+  margin-left: 3.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.settings-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3rem;
+}
+
+.settings-card {
+  background-color: white;
+  height: 33rem;
+  -webkit-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  -moz-box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+  box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.26);
+}
+
+.privacy-settings{
+  margin-right: 3rem;
+}
+
+.avatar-settings{
+  margin-left: 3rem;
+}
+
+.settings-card-header{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.profile-pic-settings{
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-pic-settings > img{
+  border-radius: 50%;
+  width: 10rem;
+  border: 5px solid #46A7C5;
+  display: block;
+  margin: auto;
+}
+
+.profile-pic-btn > button{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #46A7C5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+}
+
+.info-input{
+  display: block;
+  width: 80%;
+  margin: auto;
+  height: 2rem;
+  border: none;
+  border-bottom: 1px solid rgba(2, 138, 183, 0.473);
+  margin-top: 1.5rem;
+  padding-left: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.info-input:focus {
+  outline: none;
+  border-bottom: 1.5px solid rgba(0, 191, 255, 1);
+}
+
+.info-text{
+  width: 80%;
+  height: 5rem;
+  resize: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: .9rem;
+  padding-left: 10px;
+  padding-top: 5px;
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(2, 138, 183, 0.473);
+}
+
+.info-text:focus {
+  border: 1.5px solid rgba(0, 191, 255, 1);
+  outline: none;
+}
+
+.info-submit{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #2EC9B8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  display: block;
+  float: right;
+  margin-right: 10%;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+}
+
+.privacy-label{
+  font-family: 'Open Sans', sans-serif;
+  font-size: .75rem;
+  color: #656565;
+
+  margin-left: 1rem;
+}
+
+.view-profile{
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.follow{
+  margin-bottom: 3rem;
+}
+
+select {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  color: #656565;
+  width: 10rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  padding-left: 8px;
+  -webkit-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  float: right;
+  margin-right: 1rem;
+}
+
+.blocked-card{
+  color: #656565;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  padding-left: 8px;
+  padding-top: 8px;
+  background-color: #F8F8F8;
+  height: 8rem;
+  width: 12rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  float: right;
+  margin-right: 1rem;
+}
+
+.blocked-profiles{
+  margin-bottom: 11rem;
+}
+
+.delete-account{
+  float: right;
+  margin-right: 1rem;
+}
+
+.delete-btn{
+  background-color: #C92E38;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+  box-shadow: 5px 6px 6px -5px rgba(0,0,0,0.2);
+}
+
 @media only screen and (max-height: 1000px) {
   .auth-secondary{
     top: 16%;

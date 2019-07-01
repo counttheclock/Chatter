@@ -5,6 +5,7 @@ const { check, validationResult } = require('express-validator');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Posts = require('../../models/Posts');
 
 // @route  GET api/profile/test
 // @desc   Test route
@@ -34,7 +35,7 @@ router.get('/me', auth, async (req, res) => {
 // @access Private
 router.post('/', auth, async (req, res) => {
   const {
-    employement,
+    employment,
     location,
     education,
     song,
@@ -44,7 +45,7 @@ router.post('/', auth, async (req, res) => {
 
   const profileFields = {};
   profileFields.user = req.user.id;
-  if (employement) profileFields.employement = employement;
+  if (employment) profileFields.employment = employment;
   if (location) profileFields.location = location;
   if (education) profileFields.education = education;
   if (song) profileFields.song = song;
@@ -62,7 +63,7 @@ router.post('/', auth, async (req, res) => {
 
     profile = new Profile(profileFields);
 
-    await Profile.save();
+    await profile.save();
 
     res.json(profile);
   } catch (err) {
@@ -108,6 +109,7 @@ router.get('/user/:user_id', async (req, res) => {
 // @access Private
 router.delete('', auth, async (req, res) => {
   try {
+    await Posts.deleteMany({ user: req.user.id });
     await Profile.findOneAndRemove({ user: req.user.id });
     await User.findOneAndRemove({ _id: req.user.id });
     res.json({ msg: 'User deleted' });
