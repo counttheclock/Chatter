@@ -21,7 +21,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout, location }) => {
           </form>
         </div>
         <div className="account-btn-wrapper">
-          <Link to="/settings" className="settings-btn">Account</Link>
+          <Link to="/profiles" className="settings-btn">Account</Link>
           <button onClick={logout} className="logout-btn">Logout</button>
         </div>
       </nav>
