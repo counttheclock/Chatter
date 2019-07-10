@@ -14,7 +14,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   return (
     <Fragment>
       {loading ? <Spinner /> :
-        <div className="profiles-wrapper">
+        <div className="profiles-wrapper container">
           <span className="profiles-header">Profiles</span>
           <div className="profiles">
             {profiles.length > 0 ? (

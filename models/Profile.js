@@ -24,14 +24,22 @@ const ProfileSchema = new Schema({
   description: {
     type: String
   },
-  followers: {
-    type: [Schema.Types.ObjectId],
-    ref: 'user'
-  },
-  following: {
-    type: [Schema.Types.ObjectId],
-    ref: 'user'
-  },
+  followers: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      }
+    }
+  ],
+  following: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      }
+    }
+  ],
   seeProfile: {
     type: String,
     default: 'everyone'
@@ -40,23 +48,38 @@ const ProfileSchema = new Schema({
     type: String,
     default: 'anyone'
   },
-  blocked: {
-    type: [Schema.Types.ObjectId],
-    ref: 'user'
-  },
-  notes: {
-    type: [
-      {
-        user: {
-          type: Schema.Types.ObjectId,
-          ref: 'user'
-        },
-        note: {
-          type: String
-        }
+  blocked: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
       }
-    ]
-  },
+    }
+  ],
+  notes: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      },
+      firstName: {
+        type: String
+      },
+      lastName: {
+        type: String
+      },
+      text: {
+        type: String,
+      },
+      avatar: {
+        type: String
+      },
+      date: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ],
   date: {
     type: Date,
     default: Date.now

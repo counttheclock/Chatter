@@ -13,9 +13,9 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth, match })
   return (
     <Fragment>
       {profile === null || loading ? <Spinner /> :
-        <Fragment>
-          <ProfileTop profile={profile} />
-        </Fragment>
+        <div className="container">
+          <ProfileTop profile={profile} userId={auth.user} />
+        </div>
       }
     </Fragment>
   )

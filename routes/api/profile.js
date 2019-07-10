@@ -85,6 +85,111 @@ router.get('', async (req, res) => {
   }
 })
 
+// @route  PUT api/profile/user/follow/:id
+// @desc   Follow a user
+// @access Private
+router.put('/user/follow/:id', auth, async (req, res) => {
+  try {
+    const profile = await Profile.findById(req.params.id);
+    const myprofile = await Profile.findOne({ user: req.user.id });
+
+    if (!profile) return res.status(400).json({ msg: 'Profile not found' });
+
+    if (profile.followers.filter(follower => follower.user.toString() === req.user.id).length > 0) {
+      return res.json(400).json({ msg: 'Already a follower' });
+    }
+
+    profile.followers.unshift({ user: req.user.id });
+    myprofile.following.unshift({ user: profile.user._id });
+
+    await profile.save();
+    await myprofile.save();
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+})
+
+// @route  PUT api/profile/user/unfollow/:id
+// @desc   Unfollow a user
+// @access Private
+router.put('/user/unfollow/:id', auth, async (req, res) => {
+  try {
+    const profile = await Profile.findById(req.params.id);
+    const myprofile = await Profile.findOne({ user: req.user.id });
+
+    if (profile.followers.filter(follower => follower.user.toString() === req.user.id).length === 0) {
+      return res.json(400).json({ msg: 'Not a follower' })
+    };
+
+    const removeIndex = profile.followers.map(follower => follower.user.toString()).indexOf(req.user.id);
+    const removeIndex2 = myprofile.following.map(follow => follow.user.toString()).indexOf(profile.user._id);
+
+    profile.followers.splice(removeIndex, 1);
+    myprofile.following.splice(removeIndex2, 1);
+
+    await profile.save();
+    await myprofile.save();
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error')
+  }
+})
+
+// @route  POST api/profile/note/:id
+// @desc   Add new notification
+// @access Private
+router.post('/note/:id', auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    const profile = await Profile.findById(req.params.id);
+
+    const newNote = {
+      text: req.body.text,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      avatar: user.avatar,
+      user: req.user.id
+    }
+
+    profile.notes.unshift(newNote);
+
+    await profile.save();
+
+    res.json(profile.notes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error')
+  }
+});
+
+// @route  DELETE api/profile/note/:id/:note_id
+// @desc   Delete notification
+// @access Private
+router.delete('/note/:id/:note_id', auth, async (req, res) => {
+  try {
+    const profile = await Profile.findById(req.params.id);
+
+    const note = profile.notes.find(note => note.id === req.params.note_id);
+    // Make sure note exists
+    if (!note) {
+      return res.status(404).json({ msg: 'Notification does not exist' })
+    }
+    const removeIndex = profile.notes.map(note => note.id).indexOf(req.params.note_id)
+    profile.notes.splice(removeIndex, 1)
+    await profile.save();
+    res.json(profile.notes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error')
+  }
+});
+
+
 // @route  GET api/profile/user/:user_id
 // @desc   Get profile by user ID
 // @access Public
