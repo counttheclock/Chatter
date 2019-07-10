@@ -24,8 +24,7 @@ const InfoSettings = ({ createProfile, profile: { profile } }) => {
         description: !profile.description ? '' : profile.description
       })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [setFormData, profile])
 
 
   const {
