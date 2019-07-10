@@ -12,4 +12,14 @@ export const GET_PROFILES = 'GET_PROFILES';
 export const PROFILE_ERROR = 'PROFILE_ERROR';
 export const CLEAR_PROFILE = 'CLEAR_PROFILE';
 export const ACCOUNT_DELETED = 'ACCOUNT_DELETED';
-
+export const GET_POSTS = 'GET_POSTS';
+export const GET_POST = 'GET_POST';
+export const POST_ERROR = 'POST_ERROR';
+export const ADD_POST = 'ADD_POST';
+export const DELETE_POST = 'DELETE_POST';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const UPDATE_POST_LIKE = 'UPDATE_POST_LIKE';
+export const UPDATE_FOLLOWERS = 'UPDATE_FOLLOWERS';
+export const ADD_NOTE = 'ADD_NOTE';
+export const REMOVE_NOTE = 'REMOVE_NOTE';
