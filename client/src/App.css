@@ -26,6 +26,14 @@ body {
                                   supported by Chrome and Opera */
 }
 
+.hide {
+  display: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
@@ -109,37 +117,59 @@ select:-webkit-autofill:focus {
   overflow: hidden;
 }
 
-.landing {
-  position: relative;
-  background: rgb(103,215,249);
-  background: linear-gradient(129deg, rgba(103,215,249,1) 0%, rgba(35,84,99,.75) 100%);
+.landing-outer {
   height: 100vh;
+  background-color: rgba(0, 146, 190, 0.8);
 }
 
-.landing-brand{
+.landing-wrapper{
+  display:grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+}
+
+.welcome{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
   font-size: 4rem;
-  line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-.btn {
-  display: inline-block;
-  background: var(--light-color);
-  color: #333;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
-  outline: none;
-  border-radius: 3px;
-  text-decoration: none;
+.sub-tag{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.btn-landing {
-  background: white;
-  color: var(--primary-color);
+.loginorsign{
+  display: inline;
+  margin-top: 2rem;
+}
+
+.landing-or{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+.landing-btn {
+  display: inline;
+   background-color: white;
+   padding: 0.8rem 1.3rem;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-left: 2rem;
+   margin-right: 2rem;
+}
+
+.landing-btn > a {
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
 }
 
 .auth {
@@ -2001,6 +2031,52 @@ select {
   .post-text-wrapper {
     font-size: 0.9rem;
   }
+
+  .welcome{
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .landing-logo > img {
+    width: 10rem;
+  }
+  
+  .sub-tag{
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .loginorsign{
+    display: inline;
+    margin-top: 2rem;
+  }
+  
+  .landing-or{
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+  }
+  
+  .landing-btn {
+    display: inline;
+     background-color: white;
+     padding: 0.6rem 1rem;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     margin-left: 2rem;
+     margin-right: 2rem;
+  }
+  
+  .landing-btn > a {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+  }
 }
 
 
@@ -2031,5 +2107,3 @@ select {
     height: 60%;
   }
 }
-
-
