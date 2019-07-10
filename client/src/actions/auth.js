@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
+import { createProfile } from './profile'
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -43,13 +44,21 @@ export const register = ({ firstName, lastName, email, password }) => async disp
   const body = JSON.stringify({ firstName, lastName, email, password });
 
   try {
-    const res = await axios.post('/api/users', body, config)
+    const res = await axios.post('/api/users', body, config);
 
     dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data
     });
     dispatch(loadUser());
+    dispatch(createProfile({
+      employment: '',
+      location: '',
+      education: '',
+      song: '',
+      movie: '',
+      description: ''
+    }))
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
