@@ -15,14 +15,20 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout, location }) => {
         <div className="logo">
           <Link to="/dashboard"><img className="logo-img" src={logo} alt="logo" /></Link>
         </div>
-        <div className="search">
-          <form className="search-form">
-            <input className="seach-input" type="text" placeholder="Search" />
-          </form>
+        <div>
         </div>
         <div className="account-btn-wrapper">
-          <Link to="/profiles" className="settings-btn">Account</Link>
+          <Link to="/profiles" className="settings-btn">Profiles</Link>
+          <Link to="/settings" className="settings-btn">Account</Link>
           <button onClick={logout} className="logout-btn">Logout</button>
+          <Link to="/notifications" className="nav-note-btn"><i className="fas fa-bell"></i></Link>
+          <input className="menu-btn" type="checkbox" id="menu-btn" />
+          <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+          <ul className="menu">
+            <li><Link className="menu-link" to="/profiles">Profiles</Link></li>
+            <li><Link className="menu-link" to="/settings">Account</Link></li>
+            <li><button className="menu-link logout-smbtn" onClick={logout}>Logout</button></li>
+          </ul>
         </div>
       </nav>
     </div>

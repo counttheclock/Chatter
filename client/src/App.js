@@ -9,6 +9,8 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import Settings from './components/settings/Settings';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Post from './components/post/Post';
+import Notifications from './components/notes/Notifications';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -39,6 +41,8 @@ const App = () => {
             <PrivateRoute exact path="/settings" component={Settings} />
             <PrivateRoute exact path="/profiles" component={Profiles} />
             <PrivateRoute exact path="/profile/:id" component={Profile} />
+            <PrivateRoute exact path="/post/:id" component={Post} />
+            <PrivateRoute exact path="/notifications" component={Notifications} />
           </Switch>
         </Fragment>
       </Router>

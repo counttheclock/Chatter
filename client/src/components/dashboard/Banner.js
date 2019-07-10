@@ -1,56 +1,56 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
-const Banner = (props) => {
+const Banner = ({ id, firstName, lastName, profile, avatar }) => {
   return (
     <div className="banner-card">
       <div className="profile-pic">
-        <img src={props.avatar} alt="Profile" />
+        <img src={avatar} alt="Profile" />
       </div>
       <div className="user-name">
-        {props.firstName} {props.lastName}
+        <Link className="user-name-link" to={`/profile/${id}`}>{firstName} {lastName}</Link>
       </div>
-      {props.profile !== null ?
+      {profile !== null && (profile.employment || profile.location || profile.education || profile.song || profile.movie || profile.description) ?
         <div className="banner-profile-info">
           {
-            props.profile.employment !== null && props.profile.employment ?
+            profile.employment !== null && profile.employment ?
               <div className="profile-info-banner">
-                <i className="fas fa-building"></i> {props.profile.employment}
+                <i className="fas fa-building"></i> {profile.employment}
               </div> :
               <Fragment />
           }
           {
-            props.profile.location !== null && props.profile.location ?
+            profile.location !== null && profile.location ?
               <div className="profile-info-banner">
-                <i className="fas fa-location-arrow"></i> {props.profile.location}
+                <i className="fas fa-location-arrow"></i> {profile.location}
               </div> :
               <Fragment />
           }
           {
-            props.profile.education !== null && props.profile.education ?
+            profile.education !== null && profile.education ?
               <div className="profile-info-banner">
-                <i className="fas fa-school"></i> {props.profile.education}
+                <i className="fas fa-school"></i> {profile.education}
               </div> :
               <Fragment />
           }
           {
-            props.profile.song !== null && props.profile.song ?
+            profile.song !== null && profile.song ?
               <div className="profile-info-banner">
-                <i className="fas fa-headphones"></i> {props.profile.song}
+                <i className="fas fa-headphones"></i> {profile.song}
               </div> :
               <Fragment />
           }
           {
-            props.profile.movie !== null && props.profile.movie ?
+            profile.movie !== null && profile.movie ?
               <div className="profile-info-banner">
-                <i className="fas fa-film"></i> {props.profile.movie}
+                <i className="fas fa-film"></i> {profile.movie}
               </div> :
               <Fragment />
           }
           {
-            props.profile.description !== null && props.profile.description ?
+            profile.description !== null && profile.description ?
               <div className="profile-description-banner">
-                {props.profile.description}
+                {profile.description}
               </div> :
               <Fragment />
           }
